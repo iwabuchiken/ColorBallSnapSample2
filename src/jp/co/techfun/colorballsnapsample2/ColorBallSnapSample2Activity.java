@@ -90,8 +90,10 @@ public class ColorBallSnapSample2Activity extends Activity {
 			
 			// process filtering
 			lowX = getLowPassFilterValue(x, lowX);
-			lowY = getLowPassFilterValue(x, lowY);
-			lowZ = getLowPassFilterValue(x, lowZ);
+			lowY = getLowPassFilterValue(y, lowY);
+			lowZ = getLowPassFilterValue(z, lowZ);
+//			lowY = getLowPassFilterValue(x, lowY);
+//			lowZ = getLowPassFilterValue(x, lowZ);
 			
 			// switching the event
 			switch (event.sensor.getType()) {

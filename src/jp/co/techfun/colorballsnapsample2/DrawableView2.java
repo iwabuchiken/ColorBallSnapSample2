@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.view.View;
+import android.widget.Toast;
 
 public class DrawableView2 extends View{
 	/** class fields
@@ -147,6 +148,12 @@ public class DrawableView2 extends View{
 		
 		// if the ball is on top of the hole?
 		if (drawables[currentColor].getBounds().contains(movableBallX, movableBallY)) {
+			
+			//debug
+			// toast
+//			Toast.makeText(this, "message", Toast.LENGTH_SHORT).show();
+			
+			
 			// if the stock is full
 			if (fallCount >= fallenBallDrawables.length) {
 				// empty the stock
