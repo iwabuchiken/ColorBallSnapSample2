@@ -198,12 +198,35 @@ public class DrawableView2 extends View{
 			int cY) {
 		// the ball out of the screen?
 		//	=> i.e. the entire ball out of the screen?
-		if (movableBallX < - DIAMETER || movableBallX > width 
-				|| movableBallY < - DIAMETER || movableBallY > height) {
-			// set the ball at the center of the screen
-			movableBallX = cX;
-			movableBallY = cY;
-		}//if (movableBallX < - DIAMETER || movableBallX > width || movableBallY < - DIAMETER || movableBallY > height)
+//		if (movableBallX < - DIAMETER || movableBallX > width 
+//		if (movableBallY > height) {
+//			// set the ball at the center of the screen
+//			movableBallX = cX;
+//			movableBallY = cY;
+//		}//if (movableBallX < - DIAMETER || movableBallX > width || movableBallY < - DIAMETER || movableBallY > height)
+		
+		/** The ball out of the screen
+		 * 
+		 */
+		// Left side
+		if (movableBallX < - DIAMETER) {
+			movableBallX = width - DIAMETER;
+		}//if (movableBallX < - DIAMETER)
+		
+		// Right side
+		if (movableBallX > width) {
+			movableBallX = OFFSET_X;
+		}//if (movableBallX > width)
+		
+		// Top side
+		if (movableBallY < - DIAMETER) {
+			movableBallY = height - DIAMETER;
+		}//if (movableBallX < - DIAMETER)
+		
+		// Bottom side
+		if (movableBallY > height) {
+			movableBallY = OFFSET_Y;
+		}//if (movableBallY > height)
 		
 		/** display the ball
 		 * 
